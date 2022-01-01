@@ -2,7 +2,7 @@
 
 ![HOW-OTP-BOT-WORKS](https://user-images.githubusercontent.com/96657745/147847987-3c7df19b-bc2d-4e06-9e45-2fc746c5168e.jpg)
 
-
+just modified a bit to made it faster <3
 
 Bypass SMS verifications from Paypal, Instagram, Snapchat, Google, 3D Secure, and many others... using a Discord Bot or the private API.
 
