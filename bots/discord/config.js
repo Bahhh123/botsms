@@ -1,10 +1,10 @@
 module.exports = {
-    apiurl: 'http://localhost:1337',
-    apipassword: '',
+    apiurl: 'http://102.166.10.148:1337',
+    apipassword: '3cG69dWCBS4if82f0QihlnMF4APlsOeH',
 
-    discordtoken: '',
+    discordtoken: 'OTQwMjMxMzk1MjU3NzYxODQy.YgEYuQ.h8BC-tOljE-M9IJimi8IvbZC55Y',
     discordprefix: '!',
-    secretpassword: 'ChAnGeThIsWiThYoUrPaSsWoRdNoW!',
+    secretpassword: 'kevooo679',
     botuser_rolename: 'Bot User',
-    admin_rolename: 'Admin'
+    admin_rolename: 'Admin',
 };
