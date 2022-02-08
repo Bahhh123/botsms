@@ -1,5 +1,5 @@
 /**
- * Intégrations des dépendences 
+ * Intégrations des dépendences
  */
 const express = require('express');
 const morgan = require('morgan');
@@ -27,9 +27,11 @@ if (config.setupdone == 'false') setup();
  * Partie express côté serveur web
  */
 var app = express();
-app.use(express.urlencoded({
-    extended: true
-}));
+app.use(
+    express.urlencoded({
+        extended: true,
+    })
+);
 //app.use(morgan('combined')); // Only used for debug http requests
 
 app.post('/voice/:apipassword', auth, voice);
@@ -39,9 +41,9 @@ app.post('/sms', auth, sms);
 app.post('/get', auth, get);
 app.get('/stream/:service', stream);
 
-app.use(function(req, res) {
+app.use(function (req, res) {
     res.status(404).json({
-        error: 'Not found, or bad request method.'
+        error: 'Not found, or bad request method.',
     });
 });
 

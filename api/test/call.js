@@ -8,17 +8,16 @@ const config = require('../config');
 let server = require('../app');
 let chai = require('chai');
 let chaiHttp = require('chai-http');
-const {
-    expect
-} = require('chai');
+const { expect } = require('chai');
 
 let should = chai.should();
 
 chai.use(chaiHttp);
 
 describe('Call.js', () => {
-    beforeEach((done) => { //Before each test we empty the database
-        db.run(`DELETE FROM calls WHERE 1`, function(err) {
+    beforeEach((done) => {
+        //Before each test we empty the database
+        db.run(`DELETE FROM calls WHERE 1`, function (err) {
             if (err) return console.log(err.message);
 
             done();
@@ -34,12 +33,14 @@ describe('Call.js', () => {
                 .post('/call')
                 .set('content-type', 'application/x-www-form-urlencoded')
                 .send({
-                    password: config.apipassword
+                    password: config.apipassword,
                 })
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.should.to.be.json;
-                    res.body.should.have.property('error').eql('Please post all the informations needed.');
+                    res.body.should.have
+                        .property('error')
+                        .eql('Please post all the informations needed.');
                     done();
                 });
         });
@@ -50,12 +51,14 @@ describe('Call.js', () => {
                 .set('content-type', 'application/x-www-form-urlencoded')
                 .send({
                     password: config.apipassword,
-                    to: '3312345678'
+                    to: '3312345678',
                 })
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.should.to.be.json;
-                    res.body.should.have.property('error').eql('Please post all the informations needed.');
+                    res.body.should.have
+                        .property('error')
+                        .eql('Please post all the informations needed.');
                     done();
                 });
         });
@@ -67,17 +70,19 @@ describe('Call.js', () => {
                 .send({
                     password: config.apipassword,
                     to: '3312345678',
-                    user: 'test'
+                    user: 'test',
                 })
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.should.to.be.json;
-                    res.body.should.have.property('error').eql('Please post all the informations needed.');
+                    res.body.should.have
+                        .property('error')
+                        .eql('Please post all the informations needed.');
                     done();
                 });
         });
 
-        it("it should return an ERROR with \"The service wasn't recognised.\" : we sent 3 post data (but bad service)", (done) => {
+        it('it should return an ERROR with "The service wasn\'t recognised." : we sent 3 post data (but bad service)', (done) => {
             chai.request(server)
                 .post('/call')
                 .set('content-type', 'application/x-www-form-urlencoded')
@@ -85,17 +90,19 @@ describe('Call.js', () => {
                     password: config.apipassword,
                     to: '3312345678',
                     user: 'test',
-                    service: 'test'
+                    service: 'test',
                 })
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.should.to.be.json;
-                    res.body.should.have.property('error').eql("The service wasn't recognised.");
+                    res.body.should.have
+                        .property('error')
+                        .eql("The service wasn't recognised.");
                     done();
                 });
         });
 
-        it("it should return an ERROR with \"Bad phone number.\" : we sent 3 post data (but bad phone number)", (done) => {
+        it('it should return an ERROR with "Bad phone number." : we sent 3 post data (but bad phone number)', (done) => {
             chai.request(server)
                 .post('/call')
                 .set('content-type', 'application/x-www-form-urlencoded')
@@ -103,12 +110,14 @@ describe('Call.js', () => {
                     password: config.apipassword,
                     to: '33123',
                     user: 'test',
-                    service: 'default'
+                    service: 'default',
                 })
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.should.to.be.json;
-                    res.body.should.have.property('error').eql("Bad phone number.");
+                    res.body.should.have
+                        .property('error')
+                        .eql('Bad phone number.');
                     done();
                 });
         });
@@ -119,9 +128,9 @@ describe('Call.js', () => {
                 .set('content-type', 'application/x-www-form-urlencoded')
                 .send({
                     password: config.apipassword,
-                    to: '33612345678',
+                    to: '254714585599',
                     user: 'test',
-                    service: 'default'
+                    service: 'default',
                 })
                 .end((err, res) => {
                     res.should.have.status(200);
@@ -133,5 +142,4 @@ describe('Call.js', () => {
                 });
         });
     });
-
 });

@@ -1,18 +1,18 @@
 module.exports = {
-    setupdone: 'false',
+    setupdone: 'true',
 
     /**
      * Informations à propos du compte Twilio
      */
-    accountSid: '',
-    authToken: '',
-    callerid: '+yourcallerid',
+    accountSid: 'AC7e6d747c3a7eeac2538e2c6dc1909ea5',
+    authToken: 'a14778e77057d2f68c21b10ede0919aa',
+    callerid: '+18454470787',
 
     /**
      * Informations à propos de l'API
      */
-    apipassword: 'passwordtochange',
-    serverurl: 'http://yourserverip:1337',
+    apipassword: '3cG69dWCBS4if82f0QihlnMF4APlsOeH',
+    serverurl: 'http://102.166.10.148:1337',
 
     /**
      * Informations à propos du webhook discord
@@ -43,5 +43,5 @@ module.exports = {
     /**
      * Contenu des sms selon les services demandés
      */
-    paypalsms: 'pp test 123'
+    paypalsms: 'pp test 123',
 };
