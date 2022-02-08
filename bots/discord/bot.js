@@ -1,6 +1,7 @@
 /**
  * Instanciation des dépendances discord et création du client discord
  */
+require('dotenv').config();
 const Discord = require('discord.js');
 const client = new Discord.Client();
 

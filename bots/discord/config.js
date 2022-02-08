@@ -1,10 +1,10 @@
 module.exports = {
     apiurl: 'http://102.166.10.148:1337',
-    apipassword: '3cG69dWCBS4if82f0QihlnMF4APlsOeH',
+    apipassword: process.env.API_PASSWORD,
 
-    discordtoken: 'OTQwMjMxMzk1MjU3NzYxODQy.YgEYuQ.h8BC-tOljE-M9IJimi8IvbZC55Y',
+    discordtoken: process.env.DISCORD_TOKEN,
     discordprefix: '!',
-    secretpassword: 'kevooo679',
+    secretpassword: process.env.SECRET_PASSWORD,
     botuser_rolename: 'Bot User',
     admin_rolename: 'Admin',
 };
