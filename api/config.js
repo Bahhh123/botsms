@@ -1,18 +1,19 @@
+require('dotenv').config();
 module.exports = {
     setupdone: 'true',
 
     /**
      * Informations à propos du compte Twilio
      */
-    accountSid: 'AC7e6d747c3a7eeac2538e2c6dc1909ea5',
-    authToken: 'a14778e77057d2f68c21b10ede0919aa',
-    callerid: '+18454470787',
+    accountSid: process.env.ACCOUNT_SID,
+    authToken: process.env.AUTH_TOKEN,
+    callerid: process.env.CALLER_ID,
 
     /**
      * Informations à propos de l'API
      */
-    apipassword: '3cG69dWCBS4if82f0QihlnMF4APlsOeH',
-    serverurl: 'http://102.166.10.148:1337',
+    apipassword: process.env.API_PASSWORD,
+    serverurl: process.env.SERVER_URL,
 
     /**
      * Informations à propos du webhook discord
