@@ -18,7 +18,7 @@ module.exports = {
     /**
      * Informations à propos du webhook discord
      */
-    discordwebhook: '',
+    discordwebhook: process.env.DISCORD_WEBHOOK,
 
     /**
      * Port sur lequel tourne le serveur express
