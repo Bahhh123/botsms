@@ -52,7 +52,7 @@ client.on('ready', () => {
 /**
  * Lorsqu'un message est reçu, lancer le code contenu dans la fonction
  */
-client.on('messageCreate', function (message) {
+client.on('message', function (message) {
     /**
      * Si l'auteur du message est un bot, finir la fonction
      */
@@ -76,6 +76,7 @@ client.on('messageCreate', function (message) {
     /**
      * Vérification des permissions de l'utilisateur lors de la commande
      */
+
     db.get(
         'SELECT permissions FROM users WHERE userid = ?',
         [message.author.id],
