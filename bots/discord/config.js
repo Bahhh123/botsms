@@ -1,5 +1,5 @@
 module.exports = {
-    apiurl: 'http://102.166.10.148:1337',
+    apiurl: process.env.SERVER_URL,
     apipassword: process.env.API_PASSWORD,
 
     discordtoken: process.env.DISCORD_TOKEN,
